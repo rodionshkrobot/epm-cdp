@@ -103,7 +103,9 @@ public class Main {
         }
     }
 
-    private static Integer getUniqueWords(final TextStatisticsClient textStatisticsClient) {
+
+    //measuring our BL tasks
+    private static Integer getUniqueWords(final TextStatisticsClient textStatisticsClient) throws IOException {
         return (Integer) TimeMeasurer.measure(new TimeMeasureExecuter() {
             @Override
             public Object execute() {
@@ -111,8 +113,8 @@ public class Main {
             }
         });
     }
-
-    private static List<Pair<String, Integer>> getWordsEntryCount(final TextStatisticsClient textStatisticsClient, final String... words) {
+    //measuring our BL tasks
+    private static List<Pair<String, Integer>> getWordsEntryCount(final TextStatisticsClient textStatisticsClient, final String... words) throws IOException {
         return (List<Pair<String, Integer>>) TimeMeasurer.measure(new TimeMeasureExecuter() {
             @Override
             public Object execute() {

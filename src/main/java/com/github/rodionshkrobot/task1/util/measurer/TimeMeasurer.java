@@ -1,7 +1,9 @@
 package com.github.rodionshkrobot.task1.util.measurer;
 
+import java.io.IOException;
+
 public class TimeMeasurer {
-    public static Object measure(TimeMeasureExecuter timeMeasureExecuter) {
+    public static Object measure(TimeMeasureExecuter timeMeasureExecuter) throws IOException {
 
         Object object;
         long finish;

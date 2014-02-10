@@ -1,13 +1,17 @@
 package com.github.rodionshkrobot.task1.statistic;
 
 import com.github.rodionshkrobot.task1.util.Pair;
+import com.github.rodionshkrobot.task1.util.measurer.TimeMeasureExecuter;
+import com.github.rodionshkrobot.task1.util.measurer.TimeMeasurer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,9 +20,17 @@ public class TextStatisticsClient {
 
     private Map<String, Integer> words;
 
-    public TextStatisticsClient(InputStream inputStream, Class mapClazz) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    public TextStatisticsClient(final InputStream inputStream, Class mapClazz) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         words = (Map<String, Integer>) mapClazz.getConstructor().newInstance();
-        initStorage(inputStream);
+        //Measuring map population speed
+        TimeMeasurer.measure(new TimeMeasureExecuter() {
+            @Override
+            public Object execute() throws IOException {
+                initStorage(inputStream);
+                return null;
+            }
+
+        });
     }
 
     private void initStorage(InputStream inputStream) throws IOException {
