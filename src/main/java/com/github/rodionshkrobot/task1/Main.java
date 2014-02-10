@@ -1,9 +1,9 @@
-package task1;
+package com.github.rodionshkrobot.task1;
 
-import task1.statistic.TextStatisticsClient;
-import task1.util.Pair;
-import task1.util.measurer.TimeMeasureExecuter;
-import task1.util.measurer.TimeMeasurer;
+import com.github.rodionshkrobot.task1.statistic.TextStatisticsClient;
+import com.github.rodionshkrobot.task1.util.Pair;
+import com.github.rodionshkrobot.task1.util.measurer.TimeMeasureExecuter;
+import com.github.rodionshkrobot.task1.util.measurer.TimeMeasurer;
 
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;

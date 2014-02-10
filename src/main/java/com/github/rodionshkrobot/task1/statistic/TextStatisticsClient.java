@@ -1,7 +1,6 @@
-package task1.statistic;
+package com.github.rodionshkrobot.task1.statistic;
 
-import org.apache.log4j.Logger;
-import task1.util.Pair;
+import com.github.rodionshkrobot.task1.util.Pair;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,7 +13,6 @@ import java.util.regex.Pattern;
 
 public class TextStatisticsClient {
 
-    private static final Logger logger = Logger.getLogger(TextStatisticsClient.class);
 
     private Map<String, Integer> words;
 
@@ -35,8 +33,6 @@ public class TextStatisticsClient {
         }
         bufferedReader.close();
         inputStream.close();
-        if (logger.isInfoEnabled())
-            logger.info("Initialized storage : " + words.getClass() + "with size : " + words.size());
     }
 
     public List<Pair<String, Integer>> getWordEntryCount(String... word) {
@@ -48,8 +44,6 @@ public class TextStatisticsClient {
         for (String s : word) {
             count = words.get(s.toLowerCase());
             pairs.add(new Pair<>(s.toLowerCase(), count));
-            if (logger.isInfoEnabled())
-                logger.info("Received count for : \"" + s + "\". Count is : " + count);
         }
 
         return pairs;

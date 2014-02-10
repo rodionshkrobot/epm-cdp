@@ -1,4 +1,4 @@
-package task1.util;
+package com.github.rodionshkrobot.task1.util;
 
 public class Pair<K, V> {
     private K first;

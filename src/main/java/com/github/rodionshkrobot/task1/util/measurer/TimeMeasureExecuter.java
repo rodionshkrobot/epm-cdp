@@ -1,4 +1,4 @@
-package task1.util.measurer;
+package com.github.rodionshkrobot.task1.util.measurer;
 
 /**
  * User: Rodion
