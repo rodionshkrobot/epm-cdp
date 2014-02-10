@@ -78,12 +78,10 @@ public class Main {
 
         TextStatisticsClient hashMapTextStatisticsClient = new TextStatisticsClient(new FileInputStream(fileName == null ? DEFAULT_FILE_NAME : fileName), HashMap.class);
         TextStatisticsClient treeMapTextStatisticsClient = new TextStatisticsClient(new FileInputStream(fileName == null ? DEFAULT_FILE_NAME : fileName), TreeMap.class);
-        TextStatisticsClient linkedHashMapTextStatisticsClient = new TextStatisticsClient(new FileInputStream(fileName == null ? DEFAULT_FILE_NAME : fileName),LinkedHashMap.class);
 
         implementations = new ArrayList<>();
 
         implementations.add(hashMapTextStatisticsClient);
-        implementations.add(linkedHashMapTextStatisticsClient);
         implementations.add(treeMapTextStatisticsClient);
 
         implementationsInitialized = true;
